@@ -1,3 +1,18 @@
+docker container run debian bash --version  // roda imagem
+docker container ps //ativos
+docker container ps -a //todos executados
+
+docker container run --rm debian bash --version  // roda imagem
+
+docker container run -it debian bash
+// i modo interativo
+//t acesso ao terminal
+
+
+sudo usermod -a -G docker $USER
+
+DOCKER CONTAINER RUN --HELP // ver o help do container
+
 docker container run --name mydeb -it debian bash
 docker container ls
 docker container ls -a   //todos container criados
