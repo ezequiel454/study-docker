@@ -63,3 +63,10 @@ docker hub -> disponibilizado, tme registri
 docker image build -t ex-simple-build .
 docker image build --build-arg S3_BUCKET=myapp -t ex-simple-build .
 docker image inspect --format="{{index .Config.Labels \"maintainer\"}}" ex-build-arg
+
+
+docker image tag ex-simple-build ezequiel454/simple-build:1.0
+docker login --username=ezequiel454 
+password
+
+docker image push ezequiel454/simple-build:1.0
