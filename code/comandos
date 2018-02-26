@@ -63,3 +63,10 @@ docker hub -> disponibilizado, tme registri
 docker image build -t ex-simple-build .
 docker image build --build-arg S3_BUCKET=myapp -t ex-simple-build .
 docker image inspect --format="{{index .Config.Labels \"maintainer\"}}" ex-build-arg
+
+
+REDES
+
+docker container run -d --net none debian
+docker container run --rm alphine ash -c "ifconfig"
+docker container run --rm --net none alphine ash -c "ifconfig"
