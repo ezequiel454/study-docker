@@ -70,3 +70,8 @@ docker login --username=ezequiel454
 password
 
 docker image push ezequiel454/simple-build:1.0
+REDES
+
+docker container run -d --net none debian
+docker container run --rm alphine ash -c "ifconfig"
+docker container run --rm --net none alphine ash -c "ifconfig"
