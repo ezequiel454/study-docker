@@ -1,0 +1,50 @@
+docker container run --name mydeb -it debian bash
+docker container ls
+docker container ls -a   //todos container criados
+// -a apelido pra ver tudo
+docker container start -ai 
+//a de apache acesso ao terminal
+
+docker container run -p 8080:80 nginx
+docker container run -p 8080:80 -v $(pwd)/not-found:/usr/share/nginx/html nginx
+// o p mapeia a pasta
+
+docker container run -d --name ex-daemon-basic -p 8080:80 -v $(pwd)/html:/usr/share/nginx/html nginx
+//roda como serviso o d
+
+docker container stop ex-daemon-basic
+docker container start ex-daemon-basic
+docker container restart ex-daemon-basic
+
+docker container list
+
+docker container logs ex-daemon-basic
+docker container inspect ex-daemon-basic
+docker container exec ex-daemon-basic uname -or
+
+
+docker image ls
+docker volume ls
+
+rmi remove image
+rm remove container
+//melhor o que vme embaixo
+docker image rm
+
+docker container --help
+
+docker hub
+docker image pull redis:latest
+
+docker image tag redis:latest cod3r-redis
+
+docker image pull postgres:9.3
+
+registri -> enviar imagem e obter
+//pode ser privado
+docker hub -> disponibilizado, tme registri
+
+
+docker image build -t ex-simple-build .
+docker image build --build-arg S3_BUCKET=myapp -t ex-simple-build .
+docker image inspect --format="{{index .Config.Labels \"maintainer\"}}" ex-build-arg
